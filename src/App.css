@@ -43,13 +43,41 @@ body {
   margin: 1rem;
   position: relative;
   width: 300px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card .card-content{
+  z-index:2;
+  position: relative;
+  box-sizing: border-box;
+  padding:1em;
+}
+
+.card h2{
+  padding:10px;
+  color:white;
+  background: rgba(0,0,0,0.32);
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.52);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.card a {
+  text-decoration: none;
+}
+.card-image{
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  z-index: 0;
 }
 
 .card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-
-
+.buttonLink {
+  margin-top: 45px;
+  margin-left: 120px;
+}
