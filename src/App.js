@@ -13,6 +13,7 @@ import SearchBar from 'material-ui-search-bar';
 //Route
 import { Route, Link } from 'react-router-dom';
 import ResultPage from './ResultPage';
+import RestaurantPage from './RestaurantPage';
 
 class Login extends Component {
 	static muiName = 'RaisedButton';
@@ -242,6 +243,13 @@ class App extends Component {
 					/>
 					<Route
 						exact
+						path={'/test/test2'}
+						render={props => {
+							return <RestaurantPage />;
+						}}
+					/>
+					<Route
+						exact
 						path={'/'}
 						render={props => {
 							return (
@@ -289,7 +297,7 @@ class App extends Component {
 											/>
 										</div>
 									</div>
-									<Tabs>
+									<Tabs initialSelectedIndex={2}>
 										<Tab label="Monday">
 											<div>
 												<Recipe
