@@ -230,7 +230,7 @@ const Restaurant = ({ img, restaurantName, callLink1, callText1, callLink2, call
 					<Row style={{ height: '50%' }}>
 						<Col md={9}>
 							<List>
-								<Link style={{ textDecoration: "none"}} to={link || '/'}>
+								<Link style={{ textDecoration: "none"}} to={link || '/test/test2'}>
 									<ListItem
 										style={{ height: '107px' }}
 										leftAvatar={<Avatar src={img} size={80} />}

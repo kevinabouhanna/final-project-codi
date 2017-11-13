@@ -14,6 +14,10 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import AutoComplete from 'material-ui/AutoComplete';
 import { Link } from 'react-router-dom';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
+import Done from 'material-ui/svg-icons/action/done';
+import Dialog from 'material-ui/Dialog';
+import { List, ListItem } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
 
 class Login extends Component {
 	static muiName = 'RaisedButton';
@@ -87,6 +91,52 @@ class AutoCompleteClass extends Component {
 					dataSource={this.state.dataSource}
 					onUpdateInput={this.handleUpdateInput}
 				/>
+			</div>
+		);
+	}
+}
+
+const customContentStyleLocation = {
+	width: '250px'
+};
+
+class LocationDialog extends React.Component {
+	state = {
+		open: false
+	};
+
+	handleOpen = () => {
+		this.setState({ open: true });
+	};
+
+	handleClose = () => {
+		this.setState({ open: false });
+	};
+
+	render() {
+		const actions = [
+			<FlatButton label="Get Directions" primary={true} href={'http://www.google.com'} target={'_blank'} />
+		];
+
+		return (
+			<div>
+				<RaisedButton
+					style={{ marginTop: '10px' }}
+					primary={true}
+					label={'Get Directions'}
+					onClick={this.handleOpen}
+				/>
+
+				<Dialog
+					contentStyle={customContentStyleLocation}
+					title="Location"
+					actions={actions}
+					modal={false}
+					open={this.state.open}
+					onRequestClose={this.handleClose}
+				>
+					<span>jjjjjjjjjjjjjjjhkmkmkm</span>
+				</Dialog>
 			</div>
 		);
 	}
@@ -220,11 +270,90 @@ class RestaurantPage extends React.Component {
 											<Tabs initialSelectedIndex={0}>
 												<Tab label="Overview">
 													<Card>
-														<CardHeader title="Phone Number" subtitle={<span style={{paddingTop: "8px", display: "block"}}>01 222 333 - 01 666 666</span> }/>
-														<CardHeader title="Location" subtitle={<RaisedButton primary={true} style={{paddingTop: "8px"}} label="Get Directions" />}/>
-														<CardActions>
-															<FlatButton label="Action1" />
-														</CardActions>
+														<Row>
+															<Col md={4} style={{ width: '50%' }}>
+																<CardHeader
+																	title="Phone Number"
+																	subtitle={
+																		<span
+																			style={{
+																				paddingTop: '8px',
+																				display: 'block'
+																			}}
+																		>
+																			01 222 333 - 01 666 666
+																		</span>
+																	}
+																/>
+																<CardHeader
+																	title="Location"
+																	subtitle={<LocationDialog label="Get Directions" />}
+																/>
+																<CardActions>
+																	<CardHeader
+																		title="Additional Information"
+																		style={{ padding: '8px' }}
+																		subtitle={
+																			<span
+																				style={{
+																					paddingTop: '4px',
+																					display: 'block',
+																					lineHeight: '10px'
+																				}}
+																			>
+																				<div>
+																					<Done style={{ position: 'relative', top: '6px' }} />{' '}
+																					Delivery
+																				</div>
+																				<br />
+																				<div>
+																					<Done style={{ position: 'relative', top: '6px' }} />{' '}
+																					Dine In
+																				</div>
+																				<br />
+																				<div>
+																					<Done style={{ position: 'relative', top: '6px' }} />{' '}
+																					Take Away
+																				</div>
+																			</span>
+																		}
+																	/>
+																</CardActions>
+															</Col>
+															<Col md={8} style={{ textAlign: 'center' }}>
+																<List>
+																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Openning Hours" />
+																</List>
+																<Divider />
+																<List>
+																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Mon 11AM to 9PM" />
+																</List>
+
+																<List>
+																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Tue 11AM to 9PM" />
+																</List>
+
+																<List>
+																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Wed 11AM to 9PM" />
+																</List>
+
+																<List>
+																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Thu 11AM to 9PM" />
+																</List>
+
+																<List>
+																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Fri 11AM to 9PM" />
+																</List>
+
+																<List>
+																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Sat 11AM to 9PM" />
+																</List>
+
+																<List>
+																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Sun 11AM to 9PM" />
+																</List>
+															</Col>
+														</Row>
 													</Card>
 												</Tab>
 												<Tab label="Menu">
