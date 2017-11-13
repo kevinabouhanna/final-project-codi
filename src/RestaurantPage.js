@@ -13,6 +13,7 @@ import ActionTrendingFlat from 'material-ui/svg-icons/action/trending-flat';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import AutoComplete from 'material-ui/AutoComplete';
 import { Link } from 'react-router-dom';
+import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 
 class Login extends Component {
 	static muiName = 'RaisedButton';
@@ -103,19 +104,19 @@ class RestaurantPage extends React.Component {
 	};
 	render() {
 		const AppBarProps = {
-			title:<AutoCompleteClass/>,
-			iconElementRight:this.state.logged ? (
+			title: <AutoCompleteClass />,
+			iconElementRight: this.state.logged ? (
 				<Logged handleChange={this.handleChange} />
 			) : (
 				<Login handleChange={this.handleChange} />
 			),
 			showMenuIconButton: false
-		}
+		};
 		return (
 			<MuiThemeProvider>
 				<div>
 					<div className="App">
-						<AppBar {...AppBarProps}/>
+						<AppBar {...AppBarProps} />
 
 						<Grid fluid style={{ paddingRight: '0px', paddingLeft: '0px' }}>
 							<Row style={{ background: 'white' }}>
@@ -154,28 +155,94 @@ class RestaurantPage extends React.Component {
 							<Row>
 								<Col md={12}>
 									<Row center="md">
-										<Col md={8}>
-											<Tabs>
+										<Col md={8} style={{ paddingRight: '0px', paddingLeft: '0px' }}>
+											<Tabs initialSelectedIndex={2}>
 												<Tab label="Monday 13">
-													<p>ssssss</p>
+													<img
+														style={{ width: '100%', height: '350px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
 												</Tab>
 												<Tab label="Tuesday 14">
-													<p>ssssss</p>
+													<img
+														style={{ width: '100%', height: '350px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
 												</Tab>
 												<Tab label="Wednesday 15">
-													<p>ssssss</p>
+													<img
+														style={{ width: '100%', height: '350px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
 												</Tab>
 												<Tab label="Thursday 16">
-													<p>ssssss</p>
+													<img
+														style={{ width: '100%', height: '350px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
 												</Tab>
 												<Tab label="Friday 17">
-													<p>ssssss</p>
+													<img
+														style={{ width: '100%', height: '350px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
 												</Tab>
 												<Tab label="Saturday 18">
-													<p>ssssss</p>
+													<img
+														style={{ width: '100%', height: '350px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
 												</Tab>
 												<Tab label="Sunday 19">
-													<p>ssssss</p>
+													<img
+														style={{ width: '100%', height: '350px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
+												</Tab>
+											</Tabs>
+										</Col>
+									</Row>
+									<Row center="md">
+										<Col
+											style={{
+												paddingRight: '0px',
+												paddingLeft: '0px',
+												background: 'white',
+												height: '150px'
+											}}
+											md={8}
+										>
+											<span>dddd</span>
+										</Col>
+									</Row>
+									<Row center="md">
+										<Col style={{ paddingRight: '0px', paddingLeft: '0px' }} md={8}>
+											<Tabs initialSelectedIndex={0}>
+												<Tab label="Overview">
+													<Card>
+														<CardHeader title="Phone Number" subtitle={<span style={{paddingTop: "8px", display: "block"}}>01 222 333 - 01 666 666</span> }/>
+														<CardHeader title="Location" subtitle={<RaisedButton primary={true} style={{paddingTop: "8px"}} label="Get Directions" />}/>
+														<CardActions>
+															<FlatButton label="Action1" />
+														</CardActions>
+													</Card>
+												</Tab>
+												<Tab label="Menu">
+													<img
+														style={{ width: '100%', height: '550px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
+												</Tab>
+												<Tab label="Reviews">
+													<Card>
+														<CardHeader title="Without Avatar" subtitle="Subtitle" />
+														<CardActions>
+															<FlatButton label="Action1" />
+														</CardActions>
+													</Card>
+												</Tab>
+												<Tab label="Photos">
+													<span>test photos</span>
 												</Tab>
 											</Tabs>
 										</Col>
