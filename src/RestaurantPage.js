@@ -13,11 +13,18 @@ import ActionTrendingFlat from 'material-ui/svg-icons/action/trending-flat';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import AutoComplete from 'material-ui/AutoComplete';
 import { Link } from 'react-router-dom';
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
+import { Card, CardActions, CardHeader } from 'material-ui/Card';
 import Done from 'material-ui/svg-icons/action/done';
 import Dialog from 'material-ui/Dialog';
 import { List, ListItem } from 'material-ui/List';
+
 import Divider from 'material-ui/Divider';
+import Avatar from 'material-ui/Avatar';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import Facebook from 'material-ui-community-icons/icons/facebook';
+import Instagram from 'material-ui-community-icons/icons/instagram';
+import Twitter from 'material-ui-community-icons/icons/twitter';
 
 class Login extends Component {
 	static muiName = 'RaisedButton';
@@ -38,7 +45,7 @@ class Login extends Component {
 						this.state.handleChange(eventLogIn, true);
 					}}
 				/>
-				<RaisedButton label="Create An Account" primary={true} style={style} />
+				<FlatButton label="Create An Account" primary={true} style={style} />
 			</div>
 		);
 	}
@@ -52,9 +59,13 @@ const Logged = props => (
 	<IconMenu
 		targetOrigin={{ horizontal: 'right', vertical: 'top' }}
 		iconButtonElement={
-			<IconButton>
-				<MoreVertIcon />
-			</IconButton>
+			<FlatButton
+				label="Kevin Abou Hanna"
+				style={{height:'48px'}}
+				icon={
+					<Avatar src="/Images/restaurantlogo/mcdo.gif" /> 
+				}
+			/>
 		}
 		anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
 	>
@@ -120,7 +131,7 @@ class LocationDialog extends React.Component {
 
 		return (
 			<div>
-				<RaisedButton
+				<FlatButton
 					style={{ marginTop: '10px' }}
 					primary={true}
 					label={'Get Directions'}
@@ -262,7 +273,17 @@ class RestaurantPage extends React.Component {
 											}}
 											md={8}
 										>
-											<span>dddd</span>
+											<Row style={{ padding: '0px' }}>
+												<Col style={{ height: '150px' }} md={6}>
+													<Avatar src="/Images/restaurantlogo/mcdo.gif" size={80} />
+
+												</Col>
+												<Col style={{ height: '150px' }} md={6}>
+													<FloatingActionButton>
+														<ContentAdd />
+													</FloatingActionButton>
+												</Col>
+											</Row>
 										</Col>
 									</Row>
 									<Row center="md">
@@ -319,38 +340,90 @@ class RestaurantPage extends React.Component {
 																		}
 																	/>
 																</CardActions>
+																<CardHeader
+																	title="Social Media Links"
+																	style={{paddingRight:0}}
+																	//subtitleStyle={{padding:0}}
+																	textStyle={{paddingRight:0}}
+																	subtitle={	
+																		<div style={{marginTop: "10px",padding:0}}>
+																			<FlatButton
+																				href="https://github.com/callemall/material-ui"
+																				target="_blank"
+																				primary={true}
+																				icon={<Facebook />}
+																			/>
+																			<FlatButton
+																				href="https://github.com/callemall/material-ui"
+																				target="_blank"
+																				primary={true}
+																				icon={<Instagram />}
+																			/>
+																			<FlatButton
+																				href="https://github.com/callemall/material-ui"
+																				target="_blank"
+																				primary={true}
+																				icon={<Twitter />}
+																			/>
+																		</div>
+																		}
+																/>
 															</Col>
 															<Col md={8} style={{ textAlign: 'center' }}>
 																<List>
-																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Openning Hours" />
+																	<ListItem
+																		innerDivStyle={{ padding: '8px' }}
+																		primaryText="Openning Hours"
+																	/>
 																</List>
 																<Divider />
 																<List>
-																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Mon 11AM to 9PM" />
+																	<ListItem
+																		innerDivStyle={{ padding: '8px' }}
+																		primaryText="Mon 11AM to 9PM"
+																	/>
 																</List>
 
 																<List>
-																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Tue 11AM to 9PM" />
+																	<ListItem
+																		innerDivStyle={{ padding: '8px' }}
+																		primaryText="Tue 11AM to 9PM"
+																	/>
 																</List>
 
 																<List>
-																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Wed 11AM to 9PM" />
+																	<ListItem
+																		innerDivStyle={{ padding: '8px' }}
+																		primaryText="Wed 11AM to 9PM"
+																	/>
 																</List>
 
 																<List>
-																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Thu 11AM to 9PM" />
+																	<ListItem
+																		innerDivStyle={{ padding: '8px' }}
+																		primaryText="Thu 11AM to 9PM"
+																	/>
 																</List>
 
 																<List>
-																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Fri 11AM to 9PM" />
+																	<ListItem
+																		innerDivStyle={{ padding: '8px' }}
+																		primaryText="Fri 11AM to 9PM"
+																	/>
 																</List>
 
 																<List>
-																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Sat 11AM to 9PM" />
+																	<ListItem
+																		innerDivStyle={{ padding: '8px' }}
+																		primaryText="Sat 11AM to 9PM"
+																	/>
 																</List>
 
 																<List>
-																	<ListItem innerDivStyle={{padding: "8px"}} primaryText="Sun 11AM to 9PM" />
+																	<ListItem
+																		innerDivStyle={{ padding: '8px' }}
+																		primaryText="Sun 11AM to 9PM"
+																	/>
 																</List>
 															</Col>
 														</Row>

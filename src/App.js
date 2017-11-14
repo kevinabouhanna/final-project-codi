@@ -103,7 +103,7 @@ class App extends Component {
 					title: 'Tabbouleh',
 					img: '/Images/recipe/hummus.jpg',
 					link: '/test',
-					buttonLabel: '4 Restaurants',
+					buttonLabel: '3 Restaurants',
 					buttonLink: 'http://www.google.com'
 				},
 				{
@@ -298,7 +298,7 @@ class App extends Component {
 										</div>
 									</div>
 									<Tabs initialSelectedIndex={2}>
-										<Tab label="Monday">
+										<Tab label="Monday 13">
 											<div>
 												<Recipe
 													alt="blah"
@@ -373,7 +373,7 @@ class App extends Component {
 												/>
 											</div>
 										</Tab>
-										<Tab label="Tuesday">
+										<Tab label="Tuesday 14">
 											<div>
 												<Recipe
 													alt="blah"
@@ -448,7 +448,7 @@ class App extends Component {
 												/>
 											</div>
 										</Tab>
-										<Tab label="Wednesday">
+										<Tab label="Wednesday 15">
 											<div>
 												{this.state.meals.map((meal, index) => {
 													if (index >= this.state.mealsToShow) return false;
@@ -475,7 +475,7 @@ class App extends Component {
 												/>
 											</div>
 										</Tab>
-										<Tab label="Thursday">
+										<Tab label="Thursday 16">
 											<div>
 												<Recipe
 													alt="blah"
@@ -550,7 +550,7 @@ class App extends Component {
 												/>
 											</div>
 										</Tab>
-										<Tab label="Friday">
+										<Tab label="Friday 17">
 											<div>
 												<Recipe
 													alt="blah"
@@ -625,7 +625,7 @@ class App extends Component {
 												/>
 											</div>
 										</Tab>
-										<Tab label="Saturday">
+										<Tab label="Saturday 18">
 											<div>
 												<Recipe
 													alt="blah"
@@ -700,7 +700,7 @@ class App extends Component {
 												/>
 											</div>
 										</Tab>
-										<Tab label="Sunday">
+										<Tab label="Sunday 19">
 											<div>
 												<Recipe
 													alt="blah"
