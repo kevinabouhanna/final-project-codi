@@ -59,12 +59,12 @@ const Logged = props => (
 				label="Welcome Kevin"
 				style={{height:'48px'}}
 				icon={
-					<Avatar src="/Images/restaurantlogo/mcdo.gif" /> 
+					<Avatar src="/Images/restaurantlogo/sohiwshahi.png" /> 
 					}
 					
 			/>
 		}
-		anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+		anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 	>
 		<MenuItem primaryText="Profile" />
 		<MenuItem primaryText="Reminders" />
@@ -234,7 +234,7 @@ const Restaurant = ({ img, restaurantName, callLink1, callText1, callLink2, call
 					<Row style={{ height: '50%' }}>
 						<Col md={9}>
 							<List>
-								<Link style={{ textDecoration: "none"}} to={link || '/test/test2'}>
+								<Link style={{ textDecoration: "none"}} to={link || '/batata.harra/sohi.w.shahi'}>
 									<ListItem
 										style={{ height: '107px' }}
 										leftAvatar={<Avatar src={img} size={80} />}
@@ -305,22 +305,29 @@ class ResultPage extends React.Component {
 	handleChange = (event, logged) => {
 		this.setState({ logged: logged });
 	};
+	// iconElementLeft: (
+	// 	
+	// ),
 	render() {
+		const AppBarProps = {
+			iconElementLeft: (
+				<IconButton>
+					<img src="/Images/restaurantlogo/sohiwshahi.png" alt="resto" height="32" />
+				</IconButton>
+			),
+			title: <AutoCompleteClass />,
+			iconElementRight: this.state.logged ? (
+				<Logged handleChange={this.handleChange} />
+			) : (
+				<Login handleChange={this.handleChange} />
+			)
+			//showMenuIconButton: false
+		};
 		return (
 			<MuiThemeProvider>
 				<div>
 					<div className="App">
-						<AppBar
-							title={<AutoCompleteClass />}
-							iconElementRight={
-								this.state.logged ? (
-									<Logged handleChange={this.handleChange} />
-								) : (
-									<Login handleChange={this.handleChange} />
-								)
-							}
-							showMenuIconButton={false}
-						/>
+						<AppBar {...AppBarProps} />
 						<div>
 							<Grid fluid style={{ paddingRight: '0px', paddingLeft: '0px' }}>
 								<Row style={{ background: 'white' }}>
@@ -342,13 +349,13 @@ class ResultPage extends React.Component {
 													icon={<ActionTrendingFlat />}
 												/>
 											</Link>
-											<Link to="/">
-												<FlatButton label="Tabbouleh" primary={true} labelPosition="before" />
+											<Link to="/batata.harra/">
+												<FlatButton label="Batata Harra" primary={true} labelPosition="before" />
 											</Link>
 										</Row>
 										<Row style={{ marginTop: '10px', marginBottom: '15px' }}>
-											<Col md={8}>
-												<span>Search Results for Tabbouleh in Beirut</span>
+											<Col md={9}>
+												<span>Search Results for Batata Harra in Beirut</span>
 											</Col>
 										</Row>
 									</Col>

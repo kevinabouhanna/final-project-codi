@@ -51,12 +51,12 @@ const Logged = props => (
 				label="Welcome Kevin"
 				style={{height:'48px'}}
 				icon={
-					<Avatar src="/Images/restaurantlogo/mcdo.gif" /> 
+					<Avatar src="/Images/restaurantlogo/sohiwshahi.png" /> 
 					}
-					
+		
 			/>
 		}
-		anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+		anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 	>
 		<MenuItem primaryText="Profile" />
 		<MenuItem primaryText="Reminders" />
@@ -106,7 +106,7 @@ class App extends Component {
 					alt: 'blah',
 					title: 'Tabbouleh',
 					img: '/Images/recipe/hummus.jpg',
-					link: '/test',
+					link: '/batata.harra',
 					buttonLabel: '3 Restaurants',
 					buttonLink: 'http://www.google.com'
 				},
@@ -240,14 +240,14 @@ class App extends Component {
 				<div>
 					<Route
 						exact
-						path={'/test'}
+						path={'/batata.harra'}
 						render={props => {
 							return <ResultPage />;
 						}}
 					/>
 					<Route
 						exact
-						path={'/test/test2'}
+						path={'/batata.harra/sohi.w.shahi'}
 						render={props => {
 							return <RestaurantPage />;
 						}}
@@ -257,7 +257,7 @@ class App extends Component {
 						path={'/'}
 						render={props => {
 							return (
-								<div>
+								<div  style={{backgroundImage:'url(./Images/bg-pattern.png)'}}>
 									<div className="App">
 										<AppBar
 											iconElementRight={
@@ -283,8 +283,10 @@ class App extends Component {
 												alt={''}
 												style={{
 													width: '300px',
-													marginLeft: '550px',
-													marginBottom: '20px'
+													marginLeft: 'auto',
+													marginRight: 'auto',
+													marginBottom: '20px',
+													display:'block'
 												}}
 											/>
 											<SearchBar
@@ -302,7 +304,7 @@ class App extends Component {
 											/>
 										</div>
 									</div>
-									<Tabs initialSelectedIndex={2}>
+									<Tabs initialSelectedIndex={2} style={{backgroundColor:'rgb(224, 224, 224)'}}>
 										<Tab label="Monday 13">
 											<div>
 												<Recipe
@@ -372,9 +374,10 @@ class App extends Component {
 											</div>
 											<div>
 												<RaisedButton
-													style={{ backgroundColor: 'red', marginBottom: '20px' }}
+													style={{ marginBottom: '20px' }}
 													label="Show More"
 													fullWidth={true}
+													primary={true}
 												/>
 											</div>
 										</Tab>
@@ -447,9 +450,10 @@ class App extends Component {
 											</div>
 											<div>
 												<RaisedButton
-													style={{ backgroundColor: 'red', marginBottom: '20px' }}
+													style={{marginBottom: '20px' }}
 													label="Show More"
 													fullWidth={true}
+													primary={true}
 												/>
 											</div>
 										</Tab>
@@ -472,7 +476,7 @@ class App extends Component {
 											</div>
 											<div>
 												<RaisedButton
-													backgroundColor={'white'}
+													primary={true}
 													style={{ marginBottom: '20px' }}
 													label="Show More"
 													fullWidth={true}
@@ -549,9 +553,10 @@ class App extends Component {
 											</div>
 											<div>
 												<RaisedButton
-													style={{ backgroundColor: 'red', marginBottom: '20px' }}
+													style={{marginBottom: '20px' }}
 													label="Show More"
 													fullWidth={true}
+													primary={true}
 												/>
 											</div>
 										</Tab>
@@ -624,9 +629,10 @@ class App extends Component {
 											</div>
 											<div>
 												<RaisedButton
-													style={{ backgroundColor: 'red', marginBottom: '20px' }}
+													style={{marginBottom: '20px' }}
 													label="Show More"
 													fullWidth={true}
+													primary={true}
 												/>
 											</div>
 										</Tab>
@@ -699,9 +705,10 @@ class App extends Component {
 											</div>
 											<div>
 												<RaisedButton
-													style={{ backgroundColor: 'red', marginBottom: '20px' }}
+													style={{marginBottom: '20px' }}
 													label="Show More"
 													fullWidth={true}
+													primary={true}
 												/>
 											</div>
 										</Tab>
@@ -774,9 +781,10 @@ class App extends Component {
 											</div>
 											<div>
 												<RaisedButton
-													style={{ backgroundColor: 'red', marginBottom: '20px' }}
+													style={{marginBottom: '20px' }}
 													label="Show More"
 													fullWidth={true}
+													primary={true}
 												/>
 											</div>
 										</Tab>

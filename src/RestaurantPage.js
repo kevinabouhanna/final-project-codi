@@ -4,6 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
+import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Tabs, Tab } from 'material-ui/Tabs';
@@ -13,9 +14,9 @@ import AutoComplete from 'material-ui/AutoComplete';
 import { Link } from 'react-router-dom';
 import { Card, CardActions, CardHeader } from 'material-ui/Card';
 import Done from 'material-ui/svg-icons/action/done';
+import Create from 'material-ui/svg-icons/content/create';
 import Dialog from 'material-ui/Dialog';
 import { List, ListItem } from 'material-ui/List';
-
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
@@ -23,6 +24,8 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import Facebook from 'material-ui-community-icons/icons/facebook';
 import Instagram from 'material-ui-community-icons/icons/instagram';
 import Twitter from 'material-ui-community-icons/icons/twitter';
+import Snackbar from 'material-ui/Snackbar';
+import { GridList, GridTile } from 'material-ui/GridList';
 
 class Login extends Component {
 	static muiName = 'RaisedButton';
@@ -59,11 +62,8 @@ const Logged = props => (
 		iconButtonElement={
 			<FlatButton
 				label="Welcome Kevin"
-				style={{height:'48px'}}
-				icon={
-					<Avatar src="/Images/restaurantlogo/mcdo.gif" /> 
-					}
-					
+				style={{ height: '48px' }}
+				icon={<Avatar src="/Images/restaurantlogo/sohiwshahi.png" />}
 			/>
 		}
 		anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
@@ -97,11 +97,11 @@ class AutoCompleteClass extends Component {
 		return (
 			<div>
 				<AutoComplete
-				hintText="Search for your shit here"
-				dataSource={this.state.dataSource}
-				onUpdateInput={this.handleUpdateInput}
-				style={{width:"400px", textAlign:"middle"}}
-				textFieldStyle={{width:"100%"}}	
+					hintText="Search for your shit here"
+					dataSource={this.state.dataSource}
+					onUpdateInput={this.handleUpdateInput}
+					style={{ width: '400px', textAlign: 'middle' }}
+					textFieldStyle={{ width: '100%' }}
 				/>
 			</div>
 		);
@@ -127,8 +127,7 @@ class LocationDialog extends React.Component {
 
 	render() {
 		const actions = [
-			
-			<FlatButton label="Get Directions" primary={true} href={'http://www.google.com'} target={'_blank'} />
+			<FlatButton label="Get Directions" primary={true} href={'https://www.google.com.lb/maps/dir//Unnamed+Road/@33.8926966,35.5427732,162m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x151f1640bb56e463:0xdf8b964731ff9938!2m2!1d35.5429796!2d33.8931329?hl=en'} target={'_blank'} />
 		];
 
 		return (
@@ -148,32 +147,100 @@ class LocationDialog extends React.Component {
 					open={this.state.open}
 					onRequestClose={this.handleClose}
 				>
-					<span>jjjjjjjjjjjjjjjhkmkmkm</span>
+					<span>Sader Street
+						  Burj Hamud, Mont-Liban, Lebanon</span>
 				</Dialog>
 			</div>
 		);
 	}
 }
 
+const gridStyles = {
+	root: {
+		display: 'flex',
+		flexWrap: 'wrap',
+		justifyContent: 'space-around'
+	},
+	gridList: {
+		width: 911,
+		overflowY: 'auto'
+	}
+};
+
+const tilesData = [
+	{
+		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		title: 'Breakfast',
+		author: 'jill111'
+	},
+	{
+		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		title: 'Tasty burger',
+		author: 'pashminu'
+	},
+	{
+		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		title: 'Camera',
+		author: 'Danson67'
+	},
+	{
+		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		title: 'Morning',
+		author: 'fancycrave1'
+	},
+	{
+		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		title: 'Hats',
+		author: 'Hans'
+	},
+	{
+		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		title: 'Honey',
+		author: 'fancycravel'
+	},
+	{
+		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		title: 'Vegetables',
+		author: 'jill111'
+	},
+	{
+		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		title: 'Water plant',
+		author: 'BkrmadtyaKarki'
+	}
+];
+
 class RestaurantPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			logged: true
+			logged: true,
+			snackbarAutoHideDuration: 5000,
+			snackbarMessage: 'You will recieve an Email of this meal next week',
+			remindMeBoxIsOpen: false
 		};
 	}
+
+	handleRemindMeClick = () => {
+		this.setState({ remindMeBoxIsOpen: true });
+	};
 	handleChange = (event, logged) => {
 		this.setState({ logged: logged });
 	};
 	render() {
 		const AppBarProps = {
+			iconElementLeft: (
+				<IconButton>
+					<img src="/Images/restaurantlogo/sohiwshahi.png" alt="resto" height="32" />
+				</IconButton>
+			),
 			title: <AutoCompleteClass />,
 			iconElementRight: this.state.logged ? (
 				<Logged handleChange={this.handleChange} />
 			) : (
 				<Login handleChange={this.handleChange} />
-			),
-			showMenuIconButton: false
+			)
+			//showMenuIconButton: false
 		};
 		return (
 			<MuiThemeProvider>
@@ -201,16 +268,16 @@ class RestaurantPage extends React.Component {
 												icon={<ActionTrendingFlat />}
 											/>
 										</Link>
-										<Link to="/">
+										<Link to="/batata.harra/">
 											<FlatButton
-												label="Tabbouleh"
+												label="Batata Harra"
 												primary={true}
 												labelPosition="before"
 												icon={<ActionTrendingFlat />}
 											/>
 										</Link>
-										<Link to="/">
-											<FlatButton label="Restaurant Name" primary={true} labelPosition="before" />
+										<Link to="/batata.harra/sohi.w.shahi">
+											<FlatButton label="Sohi w Shahi" primary={true} labelPosition="before"/>
 										</Link>
 									</Row>
 								</Col>
@@ -271,19 +338,41 @@ class RestaurantPage extends React.Component {
 												paddingRight: '0px',
 												paddingLeft: '0px',
 												background: 'white',
-												height: '150px'
+												height: '120px'
 											}}
 											md={8}
 										>
 											<Row style={{ padding: '0px' }}>
-												<Col style={{ height: '150px' }} md={6}>
-													<Avatar src="/Images/restaurantlogo/mcdo.gif" size={80} />
-
+												<Col style={{ height: '150px', textAlign: 'left' }} md={6}>
+													<CardHeader
+														title="Sohi w Shahi"
+														subtitle="Burj Hammoud Branch"
+														avatar={
+															<Avatar src="/Images/restaurantlogo/sohiwshahi.png" size={80} />
+														}
+													/>
 												</Col>
 												<Col style={{ height: '150px' }} md={6}>
-													<FloatingActionButton>
-														<ContentAdd />
-													</FloatingActionButton>
+													<RaisedButton
+														label="Add a review"
+														labelPosition="before"
+														primary={false}
+														icon={<Create />}
+														style={{ margin: 12 }}
+													/>
+													<RaisedButton
+														label="Remind me next week"
+														labelPosition="before"
+														primary={true}
+														icon={<ContentAdd />}
+														style={{ margin: 12 }}
+														onClick={event => this.handleRemindMeClick()}
+													/>
+													<Snackbar
+														open={this.state.remindMeBoxIsOpen}
+														message={this.state.snackbarMessage}
+														autoHideDuration={this.state.snackbarAutoHideDuration}
+													/>
 												</Col>
 											</Row>
 										</Col>
@@ -304,7 +393,7 @@ class RestaurantPage extends React.Component {
 																				display: 'block'
 																			}}
 																		>
-																			01 222 333 - 01 666 666
+																			71 901 977 - 01 256 880
 																		</span>
 																	}
 																/>
@@ -344,11 +433,11 @@ class RestaurantPage extends React.Component {
 																</CardActions>
 																<CardHeader
 																	title="Social Media Links"
-																	style={{paddingRight:0}}
+																	style={{ paddingRight: 0 }}
 																	//subtitleStyle={{padding:0}}
-																	textStyle={{paddingRight:0}}
-																	subtitle={	
-																		<div style={{marginTop: "10px",padding:0}}>
+																	textStyle={{ paddingRight: 0 }}
+																	subtitle={
+																		<div style={{ marginTop: '10px', padding: 0 }}>
 																			<FlatButton
 																				href="https://github.com/callemall/material-ui"
 																				target="_blank"
@@ -368,70 +457,82 @@ class RestaurantPage extends React.Component {
 																				icon={<Twitter />}
 																			/>
 																		</div>
-																		}
+																	}
 																/>
 															</Col>
 															<Col md={8} style={{ textAlign: 'center' }}>
 																<List>
 																	<ListItem
 																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Openning Hours"
+																		primaryText="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opening Hours"
 																	/>
 																</List>
 																<Divider />
+																<Row end="xs">
+																<Col md={8} style={{ textAlign: 'left' }}>
 																<List>
 																	<ListItem
 																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Mon 11AM to 9PM"
+																		primaryText="Monday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
 																	/>
 																</List>
 
 																<List>
 																	<ListItem
 																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Tue 11AM to 9PM"
+																		primaryText="Tuesday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
 																	/>
 																</List>
 
 																<List>
 																	<ListItem
 																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Wed 11AM to 9PM"
+																		primaryText="Wednesday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
 																	/>
 																</List>
 
 																<List>
 																	<ListItem
 																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Thu 11AM to 9PM"
+																		primaryText="Thursday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
 																	/>
 																</List>
 
 																<List>
 																	<ListItem
 																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Fri 11AM to 9PM"
+																		primaryText="Friday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
 																	/>
 																</List>
 
 																<List>
 																	<ListItem
 																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Sat 11AM to 9PM"
+																		primaryText="Saturday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed"
 																	/>
 																</List>
 
 																<List>
 																	<ListItem
 																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Sun 11AM to 9PM"
+																		primaryText="Sunday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed"
 																	/>
 																</List>
+																</Col>
+																</Row>
 															</Col>
 														</Row>
 													</Card>
 												</Tab>
 												<Tab label="Menu">
+													<img
+														style={{ width: '100%', height: '550px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
+													<img
+														style={{ width: '100%', height: '550px' }}
+														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+													/>
 													<img
 														style={{ width: '100%', height: '550px' }}
 														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
@@ -446,7 +547,24 @@ class RestaurantPage extends React.Component {
 													</Card>
 												</Tab>
 												<Tab label="Photos">
-													<span>test photos</span>
+													<div style={gridStyles.root}>
+														<GridList cellHeight={180} style={gridStyles.gridList}>
+															
+															{tilesData.map( (tile,index) => (
+																<GridTile
+																	key={index}
+																	title={tile.title}
+																	subtitle={
+																		<span>
+																			by <b>{tile.author}</b>
+																		</span>
+																	}
+																>
+																	<img src={tile.img} />
+																</GridTile>
+															))}
+														</GridList>
+													</div>
 												</Tab>
 											</Tabs>
 										</Col>
