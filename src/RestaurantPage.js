@@ -6,8 +6,6 @@ import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { IconButton } from 'material-ui';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import ActionTrendingFlat from 'material-ui/svg-icons/action/trending-flat';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -45,7 +43,7 @@ class Login extends Component {
 						this.state.handleChange(eventLogIn, true);
 					}}
 				/>
-				<FlatButton label="Create An Account" primary={true} style={style} />
+				<RaisedButton label="Create An Account" primary={true} style={style} />
 			</div>
 		);
 	}
@@ -60,14 +58,15 @@ const Logged = props => (
 		targetOrigin={{ horizontal: 'right', vertical: 'top' }}
 		iconButtonElement={
 			<FlatButton
-				label="Kevin Abou Hanna"
+				label="Welcome Kevin"
 				style={{height:'48px'}}
 				icon={
 					<Avatar src="/Images/restaurantlogo/mcdo.gif" /> 
-				}
+					}
+					
 			/>
 		}
-		anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+		anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 	>
 		<MenuItem primaryText="Profile" />
 		<MenuItem primaryText="Reminders" />
@@ -98,9 +97,11 @@ class AutoCompleteClass extends Component {
 		return (
 			<div>
 				<AutoComplete
-					hintText="Type anything"
-					dataSource={this.state.dataSource}
-					onUpdateInput={this.handleUpdateInput}
+				hintText="Search for your shit here"
+				dataSource={this.state.dataSource}
+				onUpdateInput={this.handleUpdateInput}
+				style={{width:"400px", textAlign:"middle"}}
+				textFieldStyle={{width:"100%"}}	
 				/>
 			</div>
 		);
@@ -126,6 +127,7 @@ class LocationDialog extends React.Component {
 
 	render() {
 		const actions = [
+			
 			<FlatButton label="Get Directions" primary={true} href={'http://www.google.com'} target={'_blank'} />
 		];
 

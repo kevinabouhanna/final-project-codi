@@ -7,7 +7,6 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { IconButton } from 'material-ui';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import ActionTrendingFlat from 'material-ui/svg-icons/action/trending-flat';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -56,9 +55,14 @@ const Logged = props => (
 	<IconMenu
 		targetOrigin={{ horizontal: 'right', vertical: 'top' }}
 		iconButtonElement={
-			<IconButton>
-				<MoreVertIcon />
-			</IconButton>
+			<FlatButton
+				label="Welcome Kevin"
+				style={{height:'48px'}}
+				icon={
+					<Avatar src="/Images/restaurantlogo/mcdo.gif" /> 
+					}
+					
+			/>
 		}
 		anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
 	>
@@ -280,9 +284,11 @@ class AutoCompleteClass extends Component {
 		return (
 			<div>
 				<AutoComplete
-					hintText="Type anything"
+					hintText="Search for your shit here"
 					dataSource={this.state.dataSource}
 					onUpdateInput={this.handleUpdateInput}
+					style={{width:"400px"}}
+					textFieldStyle={{width:"100%"}}					
 				/>
 			</div>
 		);

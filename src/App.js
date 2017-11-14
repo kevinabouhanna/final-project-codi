@@ -6,14 +6,13 @@ import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { IconButton } from 'material-ui';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import SearchBar from 'material-ui-search-bar';
 //Route
 import { Route, Link } from 'react-router-dom';
 import ResultPage from './ResultPage';
 import RestaurantPage from './RestaurantPage';
+import Avatar from 'material-ui/Avatar';
 
 class Login extends Component {
 	static muiName = 'RaisedButton';
@@ -48,9 +47,14 @@ const Logged = props => (
 	<IconMenu
 		targetOrigin={{ horizontal: 'right', vertical: 'top' }}
 		iconButtonElement={
-			<IconButton>
-				<MoreVertIcon />
-			</IconButton>
+			<FlatButton
+				label="Welcome Kevin"
+				style={{height:'48px'}}
+				icon={
+					<Avatar src="/Images/restaurantlogo/mcdo.gif" /> 
+					}
+					
+			/>
 		}
 		anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
 	>
@@ -284,10 +288,11 @@ class App extends Component {
 												}}
 											/>
 											<SearchBar
+												hintText={"Search for your shit here"}
 												dataSource={this.state.dataSource}
 												onChange={value =>
 													this.setState({
-														dataSource: [value, value + value, value + value + value]
+														dataSource: [value]
 													})}
 												onRequestSearch={() => console.log('onRequestSearch')}
 												style={{
