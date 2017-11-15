@@ -19,13 +19,13 @@ import Dialog from 'material-ui/Dialog';
 import { List, ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Facebook from 'material-ui-community-icons/icons/facebook';
 import Instagram from 'material-ui-community-icons/icons/instagram';
 import Twitter from 'material-ui-community-icons/icons/twitter';
 import Snackbar from 'material-ui/Snackbar';
 import { GridList, GridTile } from 'material-ui/GridList';
+import TextField from 'material-ui/TextField';
 
 class Login extends Component {
 	static muiName = 'RaisedButton';
@@ -97,7 +97,7 @@ class AutoCompleteClass extends Component {
 		return (
 			<div>
 				<AutoComplete
-					hintText="Search for your shit here"
+					hintText="Search for your meal here"
 					dataSource={this.state.dataSource}
 					onUpdateInput={this.handleUpdateInput}
 					style={{ width: '400px', textAlign: 'middle' }}
@@ -127,7 +127,14 @@ class LocationDialog extends React.Component {
 
 	render() {
 		const actions = [
-			<FlatButton label="Get Directions" primary={true} href={'https://www.google.com.lb/maps/dir//Unnamed+Road/@33.8926966,35.5427732,162m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x151f1640bb56e463:0xdf8b964731ff9938!2m2!1d35.5429796!2d33.8931329?hl=en'} target={'_blank'} />
+			<FlatButton
+				label="Get Directions"
+				primary={true}
+				href={
+					'https://www.google.com.lb/maps/dir//Unnamed+Road/@33.8926966,35.5427732,162m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x151f1640bb56e463:0xdf8b964731ff9938!2m2!1d35.5429796!2d33.8931329?hl=en'
+				}
+				target={'_blank'}
+			/>
 		];
 
 		return (
@@ -147,8 +154,7 @@ class LocationDialog extends React.Component {
 					open={this.state.open}
 					onRequestClose={this.handleClose}
 				>
-					<span>Sader Street
-						  Burj Hamud, Mont-Liban, Lebanon</span>
+					<span>Sader Street Burj Hamud, Mont-Liban, Lebanon</span>
 				</Dialog>
 			</div>
 		);
@@ -170,41 +176,49 @@ const gridStyles = {
 const tilesData = [
 	{
 		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		alt: 'blah',
 		title: 'Breakfast',
 		author: 'jill111'
 	},
 	{
 		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		alt: 'blah',
 		title: 'Tasty burger',
 		author: 'pashminu'
 	},
 	{
 		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		alt: 'blah',
 		title: 'Camera',
 		author: 'Danson67'
 	},
 	{
 		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		alt: 'blah',
 		title: 'Morning',
 		author: 'fancycrave1'
 	},
 	{
 		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		alt: 'blah',
 		title: 'Hats',
 		author: 'Hans'
 	},
 	{
 		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		alt: 'blah',
 		title: 'Honey',
 		author: 'fancycravel'
 	},
 	{
 		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		alt: 'blah',
 		title: 'Vegetables',
 		author: 'jill111'
 	},
 	{
 		img: 'http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d',
+		alt: 'blah',
 		title: 'Water plant',
 		author: 'BkrmadtyaKarki'
 	}
@@ -231,7 +245,7 @@ class RestaurantPage extends React.Component {
 		const AppBarProps = {
 			iconElementLeft: (
 				<IconButton>
-					<img src="/Images/restaurantlogo/sohiwshahi.png" alt="resto" height="32" />
+					<img src="/Images/logo.png" alt="resto" height="32" />
 				</IconButton>
 			),
 			title: <AutoCompleteClass />,
@@ -277,7 +291,7 @@ class RestaurantPage extends React.Component {
 											/>
 										</Link>
 										<Link to="/batata.harra/sohi.w.shahi">
-											<FlatButton label="Sohi w Shahi" primary={true} labelPosition="before"/>
+											<FlatButton label="Sohi w Shahi" primary={true} labelPosition="before" />
 										</Link>
 									</Row>
 								</Col>
@@ -285,46 +299,55 @@ class RestaurantPage extends React.Component {
 							<Row>
 								<Col md={12}>
 									<Row center="md">
-										<Col md={8} style={{ paddingRight: '0px', paddingLeft: '0px' }}>
+										<Col md={8} style={{ paddingTop: '5px', paddingRight: '0px', paddingLeft: '0px', textAlign: "center",background: "white", }}>
 											<Tabs initialSelectedIndex={2}>
 												<Tab label="Monday 13">
 													<img
+														alt=""
 														style={{ width: '100%', height: '350px' }}
 														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
 													/>
 												</Tab>
 												<Tab label="Tuesday 14">
 													<img
+														alt=""
 														style={{ width: '100%', height: '350px' }}
 														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
 													/>
 												</Tab>
 												<Tab label="Wednesday 15">
+													<div style={{textAlign:'center',width:'100%',background:'white'}}>
 													<img
-														style={{ width: '100%', height: '350px' }}
-														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+														alt=""
+														style={{ width: 'auto', height: '350px', margin:"0 auto",display: "inline-block", }}
+														src="/Images/dailymenu.jpg"
 													/>
+													</div>
 												</Tab>
 												<Tab label="Thursday 16">
 													<img
+														alt=""
 														style={{ width: '100%', height: '350px' }}
 														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
 													/>
 												</Tab>
 												<Tab label="Friday 17">
 													<img
+														alt=""
 														style={{ width: '100%', height: '350px' }}
 														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
 													/>
 												</Tab>
 												<Tab label="Saturday 18">
 													<img
+														alt=""
 														style={{ width: '100%', height: '350px' }}
 														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
 													/>
 												</Tab>
 												<Tab label="Sunday 19">
 													<img
+														alt=""
 														style={{ width: '100%', height: '350px' }}
 														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
 													/>
@@ -348,7 +371,10 @@ class RestaurantPage extends React.Component {
 														title="Sohi w Shahi"
 														subtitle="Burj Hammoud Branch"
 														avatar={
-															<Avatar src="/Images/restaurantlogo/sohiwshahi.png" size={80} />
+															<Avatar
+																src="/Images/restaurantlogo/sohiwshahi.png"
+																size={80}
+															/>
 														}
 													/>
 												</Col>
@@ -359,6 +385,9 @@ class RestaurantPage extends React.Component {
 														primary={false}
 														icon={<Create />}
 														style={{ margin: 12 }}
+														onClick={()=> {
+														const element = document.getElementById('text-field-focus').focus()
+														}}
 													/>
 													<RaisedButton
 														label="Remind me next week"
@@ -469,88 +498,112 @@ class RestaurantPage extends React.Component {
 																</List>
 																<Divider />
 																<Row end="xs">
-																<Col md={8} style={{ textAlign: 'left' }}>
-																<List>
-																	<ListItem
-																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Monday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
-																	/>
-																</List>
+																	<Col md={8} style={{ textAlign: 'left' }}>
+																		<List>
+																			<ListItem
+																				innerDivStyle={{ padding: '8px' }}
+																				primaryText="Monday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
+																			/>
+																		</List>
 
-																<List>
-																	<ListItem
-																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Tuesday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
-																	/>
-																</List>
+																		<List>
+																			<ListItem
+																				innerDivStyle={{ padding: '8px' }}
+																				primaryText="Tuesday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
+																			/>
+																		</List>
 
-																<List>
-																	<ListItem
-																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Wednesday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
-																	/>
-																</List>
+																		<List>
+																			<ListItem
+																				innerDivStyle={{ padding: '8px' }}
+																				primaryText="Wednesday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
+																			/>
+																		</List>
 
-																<List>
-																	<ListItem
-																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Thursday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
-																	/>
-																</List>
+																		<List>
+																			<ListItem
+																				innerDivStyle={{ padding: '8px' }}
+																				primaryText="Thursday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
+																			/>
+																		</List>
 
-																<List>
-																	<ListItem
-																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Friday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
-																	/>
-																</List>
+																		<List>
+																			<ListItem
+																				innerDivStyle={{ padding: '8px' }}
+																				primaryText="Friday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM to 9PM"
+																			/>
+																		</List>
 
-																<List>
-																	<ListItem
-																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Saturday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed"
-																	/>
-																</List>
+																		<List>
+																			<ListItem
+																				innerDivStyle={{ padding: '8px' }}
+																				primaryText="Saturday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed"
+																			/>
+																		</List>
 
-																<List>
-																	<ListItem
-																		innerDivStyle={{ padding: '8px' }}
-																		primaryText="Sunday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed"
-																	/>
-																</List>
-																</Col>
+																		<List>
+																			<ListItem
+																				innerDivStyle={{ padding: '8px' }}
+																				primaryText="Sunday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed"
+																			/>
+																		</List>
+																	</Col>
 																</Row>
 															</Col>
 														</Row>
 													</Card>
+													<br />
+													<Card style={{ height: '180px' }}>
+														<CardHeader
+															title="Add your Review"
+															subtitle="Kevin Abou Hanna"
+															avatar="/Images/restaurantlogo/sohiwshahi.png"
+														/>
+														<TextField id={'text-field-focus'} hintText="Type your review here" style={{width: "90%", paddingLeft: "20px"}} />
+													</Card>
+														<br />				
 												</Tab>
 												<Tab label="Menu">
 													<img
+														alt=""
 														style={{ width: '100%', height: '550px' }}
-														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+														src="/Images/1.jpg"
 													/>
 													<img
+														alt=""
 														style={{ width: '100%', height: '550px' }}
-														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+														src="/Images/2.jpg"
 													/>
 													<img
+														alt=""
 														style={{ width: '100%', height: '550px' }}
-														src="http://muchasgraciasrestaurant.com/wp-content/uploads/2017/03/Daily-Special-450px.png?dee76d"
+														src="/Images/3.jpg"
+													/>
+													<img
+														alt=""
+														style={{ width: '100%', height: '550px' }}
+														src="/Images/4.jpg"
+													/>
+													<img
+														alt=""
+														style={{ width: '100%', height: '550px' }}
+														src="/Images/5.jpg"
 													/>
 												</Tab>
 												<Tab label="Reviews">
-													<Card>
-														<CardHeader title="Without Avatar" subtitle="Subtitle" />
-														<CardActions>
-															<FlatButton label="Action1" />
-														</CardActions>
+													<Card style={{ height: '180px' }}>
+														<CardHeader
+															title="Add your Review"
+															subtitle="Kevin Abou Hanna"
+															avatar="/Images/restaurantlogo/sohiwshahi.png"
+														/>
+														<TextField hintText="Type your review here" style={{width: "90%", paddingLeft: "20px"}} />
 													</Card>
 												</Tab>
 												<Tab label="Photos">
 													<div style={gridStyles.root}>
 														<GridList cellHeight={180} style={gridStyles.gridList}>
-															
-															{tilesData.map( (tile,index) => (
+															{tilesData.map((tile, index) => (
 																<GridTile
 																	key={index}
 																	title={tile.title}
@@ -560,7 +613,7 @@ class RestaurantPage extends React.Component {
 																		</span>
 																	}
 																>
-																	<img src={tile.img} />
+																	<img alt="" src={tile.img} />
 																</GridTile>
 															))}
 														</GridList>

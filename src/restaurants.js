@@ -2,8 +2,8 @@ export const restaurants = {
 	"Monday 13": [
 		{
 			img: '/Images/restaurantlogo/sohiwshahi.png',
-			restaurantName: 'MC Donalds',
-			restaurantLocation: 'Dawra',
+			restaurantName: 'Test',
+			restaurantLocation: 'Test Location',
 			openHours: 'Open Hours: from 9AM to 9PM',
 			costOfMeal: 'Cost Of The Meal: 12000LL',
 			delivery: 'Delivery Available',
@@ -15,8 +15,8 @@ export const restaurants = {
 		},
 		{
 			img: '/Images/restaurantlogo/sohiwshahi.png',
-			restaurantName: 'MC Donalds',
-			restaurantLocation: 'Dawra',
+			restaurantName: 'Test',
+			restaurantLocation: 'Test Location',
 			openHours: 'Open Hours: from 9AM to 9PM',
 			costOfMeal: 'Cost Of The Meal: 12000LL',
 			delivery: 'Delivery Available',
@@ -31,8 +31,8 @@ export const restaurants = {
 	"Tuesday 14": [
 		{
 			img: '/Images/restaurantlogo/sohiwshahi.png',
-			restaurantName: 'MC Donalds',
-			restaurantLocation: 'Dawra',
+			restaurantName: 'Test',
+			restaurantLocation: 'Test Location',
 			openHours: 'Open Hours: from 9AM to 9PM',
 			costOfMeal: 'Cost Of The Meal: 12000LL',
 			delivery: 'Delivery Available',
@@ -49,7 +49,7 @@ export const restaurants = {
 			img: '/Images/restaurantlogo/sohiwshahi.png',
 			restaurantName: 'صحي وشهي',
 			restaurantLocation: 'Burj Hammoud Branch',
-			openHours: 'Open Hours: from 9AM to 9PM',
+			openHours: 'Open Hours: from 9AM to 9PM (Mon - Fri)',
 			costOfMeal: 'Cost Of The Meal: 12000LL',
 			delivery: 'Delivery Available',
 			callLink1: '01 256 880',
@@ -63,7 +63,7 @@ export const restaurants = {
 			img: '/Images/restaurantlogo/sohiwshahi.png',
 			restaurantName: 'صحي وشهي',
 			restaurantLocation: 'Hamra Branch',
-			openHours: 'Open Hours: from 9AM to 9PM',
+			openHours: 'Open Hours: from 9AM to 9PM (Mon - Fri)',
 			costOfMeal: 'Cost Of The Meal: 12000LL',
 			delivery: 'Delivery Available',
 			callLink1: 'sdfdsf',
@@ -74,11 +74,11 @@ export const restaurants = {
             
         },
         {
-			img: '/Images/restaurantlogo/sohiwshahi.png',
-			restaurantName: 'MC Donalds',
-			restaurantLocation: 'Dawra',
-			openHours: 'Open Hours: from 9AM to 9PM',
-			costOfMeal: 'Cost Of The Meal: 12000LL',
+			img: '/Images/restaurantlogo/tatrina.png',
+			restaurantName: 'Tartina Di Mare',
+			restaurantLocation: 'Jounieh',
+			openHours: 'Open Hours: from 12AM to 12PM',
+			costOfMeal: 'Cost Of The Meal: 25000LL',
 			delivery: 'Delivery Available',
 			callLink1: 'sdfdsf',
             callText1: 'sdada',
@@ -91,8 +91,8 @@ export const restaurants = {
     "Thursday 16": [
 		{
 			img: '/Images/restaurantlogo/sohiwshahi.png',
-			restaurantName: 'MC Donalds',
-			restaurantLocation: 'Dawra',
+			restaurantName: 'Test',
+			restaurantLocation: 'Test Location',
 			openHours: 'Open Hours: from 9AM to 9PM',
 			costOfMeal: 'Cost Of The Meal: 12000LL',
 			delivery: 'Delivery Available',
@@ -107,8 +107,8 @@ export const restaurants = {
     "Friday 17": [
 		{
 			img: '/Images/restaurantlogo/sohiwshahi.png',
-			restaurantName: 'MC Donalds',
-			restaurantLocation: 'Dawra',
+			restaurantName: 'Test',
+			restaurantLocation: 'Test Location',
 			openHours: 'Open Hours: from 9AM to 9PM',
 			costOfMeal: 'Cost Of The Meal: 12000LL',
 			delivery: 'Delivery Available',
@@ -123,8 +123,8 @@ export const restaurants = {
     "Saturday 18": [
 		{
 			img: '/Images/restaurantlogo/sohiwshahi.png',
-			restaurantName: 'MC Donalds',
-			restaurantLocation: 'Dawra',
+			restaurantName: 'Test',
+			restaurantLocation: 'Test Location',
 			openHours: 'Open Hours: from 9AM to 9PM',
 			costOfMeal: 'Cost Of The Meal: 12000LL',
 			delivery: 'Delivery Available',
@@ -139,8 +139,8 @@ export const restaurants = {
     "Sunday 19": [
 		{
 			img: '/Images/restaurantlogo/sohiwshahi.png',
-			restaurantName: 'MC Donalds',
-			restaurantLocation: 'Dawra',
+			restaurantName: 'Test',
+			restaurantLocation: 'Test Location',
 			openHours: 'Open Hours: from 9AM to 9PM',
 			costOfMeal: 'Cost Of The Meal: 12000LL',
 			delivery: 'Delivery Available',

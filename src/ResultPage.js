@@ -168,7 +168,7 @@ class LocationDialog extends React.Component {
 		return (
 			<div>
 				<IconButton onClick={this.handleOpen} style={iconButtonResultPage} iconStyle={iconResultPage}>
-					<LocationOn style={iconResultPage} />
+					<LocationOn color= "white" style={iconResultPage} />
 				</IconButton>
 				<Dialog
 					title="Location"
@@ -207,7 +207,7 @@ class CallDialog extends React.Component {
 		return (
 			<div>
 				<IconButton onClick={this.handleOpen} style={iconButtonResultPage} iconStyle={iconResultPage}>
-					<Call />
+					<Call color= "white"/>
 				</IconButton>
 				<Dialog
 					title="Phone Numbers"
@@ -244,7 +244,7 @@ const Restaurant = ({ img, restaurantName, callLink1, callText1, callLink2, call
 								</Link>
 							</List>
 						</Col>
-						<Col md={3} style={{ background: '#E1E0DF' }}>
+						<Col md={3} style={{ background: '#00BDD5' }}>
 							<CallDialog callLink1={callLink1} callText1={callText1} callLink2={callLink2} callText2={callText2} />
 						</Col>
 					</Row>
@@ -259,7 +259,7 @@ const Restaurant = ({ img, restaurantName, callLink1, callText1, callLink2, call
 								<ListItem style={{ fontSize: '15px', height: '35px' }} primaryText={delivery} />
 							</List>
 						</Col>
-						<Col md={3} style={{ background: '#E1E0DF' }}>
+						<Col md={3} style={{ background: '#00BDD5' }}>
 							<LocationDialog locationText={locationText}/>
 						</Col>
 					</Row>
@@ -284,7 +284,7 @@ class AutoCompleteClass extends Component {
 		return (
 			<div>
 				<AutoComplete
-					hintText="Search for your shit here"
+					hintText="Search for your meal here"
 					dataSource={this.state.dataSource}
 					onUpdateInput={this.handleUpdateInput}
 					style={{width:"400px"}}
@@ -312,7 +312,7 @@ class ResultPage extends React.Component {
 		const AppBarProps = {
 			iconElementLeft: (
 				<IconButton>
-					<img src="/Images/restaurantlogo/sohiwshahi.png" alt="resto" height="32" />
+					<img src="/Images/logo.png" alt="resto" height="32" />
 				</IconButton>
 			),
 			title: <AutoCompleteClass />,
